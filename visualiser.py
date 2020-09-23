@@ -37,7 +37,6 @@ def plot_3d():
     ax.set_xlabel("Hour of the Day")
     ax.set_ylim3d(1, 7)
     ax.set_ylabel("Day of the Week")
-    ax.set_zlim3d(0, max_people)
     ax.set_zlabel("Gym Users")
     plt.show()
 
