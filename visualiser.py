@@ -2,7 +2,6 @@ import config
 from datetime import datetime
 import matplotlib.pyplot as plt
 
-max_people = 100
 show_3d = False
 date_fmt = '%Y-%m-%d %H:%M:%S'
 counts = []
@@ -44,11 +43,12 @@ def plot_3d():
 
 
 def plot_2d():
-    plt.scatter([t.hour + (t.minute / 60) for t in times], counts)
+    plt.scatter([t.hour + (t.minute / 60) for t in times], counts, s=16, color=['#002147'], marker='x')
     plt.xlabel("Hour of the Day")
-    plt.ylabel("Gym Users")
+    plt.ylabel("PureGym Users")
     plt.title("PureGym Users")
-    plt.ylim([0, max_people])
+    plt.grid(which='major')
+    plt.xlim([0, 24])
     plt.show()
 
 

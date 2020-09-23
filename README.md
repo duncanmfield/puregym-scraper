@@ -29,6 +29,8 @@ $
 $ # Install modules
 $ pip install -r requirements.txt
 $
+$ # Set email in config.py
+$
 $ # Execute
 $ python main.py
 $
@@ -46,3 +48,6 @@ Data will be output to `puregym.log` by default. Example of the output:
 2020-09-16 06:30:02 -> 44
 ```
 The datetime format is YYYY-MM-DD HH:MM:SS.
+
+### Example plot of 24 hours of data
+![Example plot of 24 hours of data](https://user-images.githubusercontent.com/48671805/94050961-da8d3900-fdce-11ea-9cc6-83536a804487.png)
