@@ -10,24 +10,24 @@ def start():
     session = requests.session()
 
     while True:
-        pin = input(f"Please enter your pin: ")
+        pin = input("Please enter your pin: ")
         success = login(session, pin)
         if success:
             logger.set_up()
             break
 
-    consecutive_failures = 0
+    failures = 0
     while True:
         run_scraper(session)
 
-        consecutive_failures += 1
-        if consecutive_failures < 3:
+        failures += 1
+        if failures < 3:
             session = requests.session()
             login(session, pin)
         else:
             print("Failed to log in too many times. Skipping.")
             logger.sleep_until_interval()
-            consecutive_failures = 0
+            failures = 0
 
 
 def validate_config():
